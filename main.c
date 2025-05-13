@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-// 1. Types
 #define TYPES_TITLE 31
 #define TYPES_CHAPTERS 100
 
@@ -22,19 +21,16 @@ typedef struct bintreenode {
     struct bintreenode *right;
 } bintree;
 
-// 2. Function to display book
 void display(book b) {
     for (int i = 0; i < b.numChapters; i++) {
         printf("%d. chapter: %s, %d sentences\n", i + 1, b.chapters[i].title, b.chapters[i].sentences);
     }
 }
 
-// 3. Function to count chapters
 int howManyChapters(book b) {
     return b.numChapters;
 }
 
-// 4. Function to get max in binary tree
 int maxBinTree(bintree *b) {
     if (b == NULL) return -2147483648;
     int maxL = maxBinTree(b->left);
@@ -45,7 +41,6 @@ int maxBinTree(bintree *b) {
     return max;
 }
 
-// 5. Implement the zh algorithm
 void zh(int X[], int N, int Y[], int M, int Z[], int *P, int *Q) {
     int i = *Q;
     int j = *P;
